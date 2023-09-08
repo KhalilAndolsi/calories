@@ -18,14 +18,16 @@ body {
 
 
 .search {
-  margin-top: 100px;
+  padding-top: 50px;
+  width: 500px;
+  margin: 0 auto;
   display: flex;
   justify-content: center;
   flex-flow: row nowrap;
   align-items: center;
 }
 
-.search input {
+.search input[type="text"] {
   padding: 0 15px;
   height: 40px;
   background-color: #fff;
@@ -36,12 +38,13 @@ body {
   border-right: none !important;
   font-size: 19px;
   transition: 0.2s;
+  width: 65%;
 }
 
-.search input:focus {
+.search input[type="text"]:focus {
   border-color: #2c642a;
 }
-.search:has(input:focus) button {
+.search:has(input[type="text"]:focus) button {
   border-color: #2c642a;
 }
 
@@ -64,6 +67,18 @@ body {
   color: #fff;
 }
 
+.search input[type="number"] {
+  width: 60px;
+  margin-left: 10px;
+  height: 40px;
+  outline: none;
+  border: 0;
+  padding: 0 5px;
+  border-radius: 100px;
+  font-weight: 600;
+  text-align: center;
+}
+
 .data {
   margin-top: 20px;
   display: flex;
@@ -74,6 +89,7 @@ body {
 .data table {
   width: 500px;
   margin: 10px 0;
+  margin-bottom: 20px;
 }
 
 .data table :where(td, th) {
@@ -83,6 +99,11 @@ body {
   padding: 10px;
   border-radius: 4px;
   font-size: 18px;
+  transition: 0.2s;
+}
+
+.data table :where(td, th):hover {
+  background-color: #d4d4d4;
 }
 
 .data h3 {
@@ -99,4 +120,22 @@ body {
   .data h3 {
     width: 90%;
   }
+  .search {
+    width: 90%;
+  }
+}
+
+h5 {
+  font-size: medium;
+  position: fixed;
+  width: 100%;
+  color: #fff;
+  text-align: end;
+  padding: 10px;
+  bottom: 0;
+}
+
+::selection {
+  background-color: #fff;
+  color: #27b46e;
 }
